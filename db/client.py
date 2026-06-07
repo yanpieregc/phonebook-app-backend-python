@@ -1,3 +1,10 @@
+import os
 from pymongo import MongoClient
+from dotenv import load_dotenv
 
-db_client = MongoClient("mongodb+srv://yanpieregc:Sindios666...@cluster0.wquud4d.mongodb.net/?retryWrites=true&w=majority").appPhonebook
+
+load_dotenv()
+
+MONGODB_URL = os.getenv("MONGODB_URL")
+
+db_client = MongoClient(MONGODB_URL).appPhonebook
